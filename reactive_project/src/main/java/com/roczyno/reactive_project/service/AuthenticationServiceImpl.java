@@ -15,10 +15,12 @@ import java.util.Map;
 public class AuthenticationServiceImpl implements AuthenticationService{
 	private final ReactiveAuthenticationManager authenticationManager;
 	private final UserRepository userRepository;
+	private final JwtService jwtService;
 
-	public AuthenticationServiceImpl(ReactiveAuthenticationManager authenticationManager, UserRepository userRepository) {
+	public AuthenticationServiceImpl(ReactiveAuthenticationManager authenticationManager, UserRepository userRepository, JwtService jwtService) {
 		this.authenticationManager = authenticationManager;
 		this.userRepository = userRepository;
+		this.jwtService = jwtService;
 	}
 
 	@Override
@@ -33,7 +35,7 @@ public class AuthenticationServiceImpl implements AuthenticationService{
 	private Map<String, String> createAuthResponse(User user) {
 		Map<String, String> result= new HashMap<>();
 		result.put("userId",user.getId().toString());
-		result.put("jwt","Jwt");
+		result.put("jwt", jwtService.generateJwt(user.getId().toString()));
 		return result;
 	}
 
