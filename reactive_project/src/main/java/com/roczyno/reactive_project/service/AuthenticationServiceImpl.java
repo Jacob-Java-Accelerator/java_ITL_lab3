@@ -2,7 +2,6 @@ package com.roczyno.reactive_project.service;
 
 import com.roczyno.reactive_project.UserRepository;
 import com.roczyno.reactive_project.entity.User;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
