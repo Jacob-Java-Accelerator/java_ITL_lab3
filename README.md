@@ -84,7 +84,7 @@ Secure a REST API for a social media platform. Users must be authenticated with 
 
 ```json
 {
-  "email": "dickson",
+  "email": "roczyno",
   "password": "password"
 }
 ```
@@ -96,7 +96,7 @@ Secure a REST API for a social media platform. Users must be authenticated with 
   "token": "<JWT_TOKEN>",
   "email": {
     "password": null,
-    "username": "dickson",
+    "username": "roczyno",
     "authorities": [{ "authority": "read" }],
     "accountNonExpired": true,
     "accountNonLocked": true,
