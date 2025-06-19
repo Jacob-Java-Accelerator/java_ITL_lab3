@@ -1,0 +1,22 @@
+INSERT INTO product (name, description, price, category, brand, stock_quantity) VALUES 
+('Smartphone X', 'High-performance smartphone with advanced features.', 599.99, 'Electronics', 'Brand A', 100),
+('Laptop Y', 'Slim and lightweight laptop with long battery life.', 1299.99, 'Electronics', 'Brand B', 50),
+('Smartwatch Z', 'Water-resistant smartwatch with fitness tracking features.', 199.99, 'Electronics', 'Brand C', 75),
+('Wireless Headphones', 'Noise-canceling wireless headphones for immersive audio experience.', 149.99, 'Electronics', 'Brand D', 30),
+('Fitness Tracker', 'Activity tracker with heart rate monitoring and GPS.', 79.99, 'Electronics', 'Brand E', 100),
+('LED TV', 'Ultra HD smart TV with HDR support.', 899.99, 'Electronics', 'Brand F', 25),
+('Digital Camera', 'Mirrorless camera with interchangeable lenses and 4K video recording.', 1099.99, 'Electronics', 'Brand G', 40),
+('Portable Bluetooth Speaker', 'Compact and portable speaker with 360-degree sound.', 69.99, 'Electronics', 'Brand H', 80),
+('Wireless Mouse', 'Ergonomic wireless mouse with customizable buttons.', 29.99, 'Electronics', 'Brand I', 120),
+('Gaming Console', 'Next-generation gaming console with high-fidelity graphics.', 499.99, 'Electronics', 'Brand J', 15),
+('Men''s Watch', 'Classic analog watch with stainless steel case and leather strap.', 199.99, 'Fashion', 'Brand K', 60),
+('Women''s Handbag', 'Stylish handbag made from premium leather.', 299.99, 'Fashion', 'Brand L', 40),
+('Running Shoes', 'Lightweight running shoes with cushioned midsoles.', 129.99, 'Fashion', 'Brand M', 100),
+('Sunglasses', 'Polarized sunglasses with UV protection.', 79.99, 'Fashion', 'Brand N', 150),
+('Backpack', 'Durable backpack with multiple compartments and padded straps.', 49.99, 'Fashion', 'Brand O', 70),
+('T-shirt', 'Comfortable cotton t-shirt with graphic print.', 19.99, 'Fashion', 'Brand P', 200),
+('Jeans', 'Slim-fit jeans made from stretch denim.', 59.99, 'Fashion', 'Brand Q', 80),
+('Dress', 'Elegant midi dress with floral pattern.', 79.99, 'Fashion', 'Brand R', 50),
+('Winter Jacket', 'Insulated jacket with waterproof shell.', 149.99, 'Fashion', 'Brand S', 30),
+('Hiking Boots', 'Waterproof hiking boots with rugged outsoles.', 129.99, 'Fashion', 'Brand T', 90);
+

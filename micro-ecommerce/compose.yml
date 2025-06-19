@@ -1,0 +1,49 @@
+services:
+  product-catalog:
+    build:
+      context: ./product-catalog/
+    ports:
+      - "8082:8082"
+    restart: unless-stopped
+    networks:
+      - microservice-network
+    depends_on:
+      - service-registry
+
+  order-service:
+    build:
+      context: ./order-service/
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
+    environment:
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE=http://service-registry:8761/eureka/
+      - EUREKA_CLIENT_REGISTER_WITH_EUREKA=true
+    networks:
+      - microservice-network
+    depends_on:
+      - service-registry
+      - product-catalog
+
+  micro-gateway:
+    build:
+      context: ./gateway/
+    ports:
+      - "8765:8765"
+    restart: unless-stopped
+    networks:
+      - microservice-network
+    depends_on:
+      - service-registry
+
+  service-registry:
+    build:
+      context: ./service-registry/
+    ports:
+      - "8761:8761"
+    restart: unless-stopped
+    networks:
+      - microservice-network
+
+networks:
+  microservice-network:

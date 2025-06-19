@@ -1,137 +1,132 @@
-- [Part 1: Spring Boot Security](#part-1-spring-boot-security)
-- [Part 2: Spring Boot Actuator (Monitoring & Management)](#part-2-spring-boot-actuator-monitoring--management)
-- [Part 3: Spring Cloud (Microservices Architecture)](#part-3-spring-cloud-microservices-architecture)
-- [Part 4: Docker for Java Applications](#part-4-docker-for-java-applications)
+# Java Intermediate Labs – Microservices & Security
 
-
-
-
-## Part 1: Spring Boot Security
-1. `Secure a REST API with JWT Authentication`
-    - `Scenario`: You're building a REST API for a social media platform. Users need to be authenticated securely before accessing their profiles or posting content.
-    - `Tasks`:
-
-        ■ Implement JWT authentication in your Spring Boot application.
-
-        ■ Users log in with username and password, receiving a JWT token upon successful authentication.
-
-        ■ Secure API endpoints by requiring a valid JWT token in the authorization header.
-
-        ■ Implement logic to validate and decode JWT tokens within controllers.
-    
-    - `Some Resources`
-        - [https://spring.io/blog/2018/03/06/using-spring-security-5-to-integrate-with-oauth-2-secured-services-such-as-facebook-and-github](https://spring.io/blog/2018/03/06/using-spring-security-5-to-integrate-with-oauth-2-secured-services-such-as-facebook-and-github)
-        - [https://jwt.io/](https://jwt.io/)
-
-    - Solution - [./socialmedia/README.md](./socialmedia/README.md)
-
-2. `Integrate OAuth2 with a Social Login Provider`
-    - `Scenario`: You're developing an e-commerce application. Allow users to register and log in using their existing social media accounts (e.g., Google, Facebook).
-    - `Tasks`:
-        
-        ■ Choose a social login provider (e.g., Google).
-
-        ■ Configure your Spring Security application to integrate with the chosen provider's OAuth2 flow.
-
-        ■ Users log in using their social media credentials, granting access to your
-        application.
-
-        ■ Retrieve user information (e.g., name, email) from the social provider after successful login.
-
-    - `Some Resources`:
-        - [https://spring.io/guides/tutorials/spring-boot-oauth2](https://spring.io/guides/tutorials/spring-boot-oauth2)
-        - [https://console.cloud.google.com/welcome/new?pli=1](https://console.cloud.google.com/welcome/new?pli=1)
-        - [https://developers.facebook.com/docs/facebook-login/](https://developers.facebook.com/docs/facebook-login/)
-        - [https://www.baeldung.com/spring-security-5-oauth2-login](https://www.baeldung.com/spring-security-5-oauth2-login)
-
-    - `Solution`
-        - [./ecommerceapp/README.md](./ecommerceapp/README.md)
-
-  
-
-
-## Part 2: Spring Boot Actuator (Monitoring & Management)
-3. `Monitor Application Health with Actuator Endpoints`
-    - `Scenario`: You're deploying your Spring Boot application to a production environment. It's crucial to monitor its health and performance.
-    - `Tasks`:
-        
-        ■ Enable Spring Boot Actuator in your application.
-
-        ■ Explore Actuator endpoints like /health, /metrics, and /env.
-
-        ■ Visualize application health metrics using a monitoring tool (e.g., Grafana, Prometheus).
-
-        ■ Secure access to Actuator endpoints using basic authentication or other security measures.
-
-    - `Some Resources`:
-        - [https://www.baeldung.com/spring-boot-actuators](https://www.baeldung.com/spring-boot-actuators)
-        - [https://grafana.com/](https://grafana.com/)
-        - [https://prometheus.io/](https://prometheus.io/)
-        - [https://www.baeldung.com/spring-boot-self-hosted-monitoring](https://www.baeldung.com/spring-boot-self-hosted-monitoring)
-
-    - `Solution`
-        - [./actuator-demo/README.md](./actuator-demo/README.md)
-
-## Part 3: Spring Cloud (Microservices Architecture)
-4. `Build a Microservice-based E-commerce Application`
-    - `Scenario`: Develop an e-commerce application with separate microservices for user management, product catalog, and order processing.
-    - `Tasks`:
-
-        ■ Design a microservices architecture for your e-commerce application.
-        
-        ■ Implement each microservice as a separate Spring Boot application.
-        
-        ■ Utilize Spring Cloud Config for centralized configuration management across microservices.
-        
-        ■ Set up a service registry (e.g., Eureka) for microservices discovery.
-        
-        ■ Develop APIs within each microservice for communication (e.g., REST APIs).
-        
-        ■ Consider implementing an API Gateway (optional) for routing user requests to the appropriate microservice.
-
-    - `Some Resources`:
-        - [https://spring.io/projects/spring-cloud](https://spring.io/projects/spring-cloud)
-        - [https://spring.io/microservices](https://spring.io/microservices)
-        - [https://microservices.io/patterns/](https://microservices.io/patterns/)
-        - [https://netflix.github.io/](https://netflix.github.io/)
-
-
-## Part 4: Docker for Java Applications
-5. `Containerize Your Microservices for Deployment`
-    - `Scenario`: You want to deploy your e-commerce microservices in a scalable and portable manner.
-    - `Tasks`:
-        
-        ■ Set up a Docker environment and learn basic Docker commands.
-        
-        ■ Create Dockerfiles for each of your microservices, packaging them into containers.
-        
-        ■ Run your microservices as Docker containers and explore container management.
-        
-        ■ Consider using Docker Compose to manage multi-container applications (microservices) for easier deployment
-
-    - `Some Resources`:
-        - [https://docs.docker.com/](https://docs.docker.com/)
-        - [https://docs.docker.com/language/java/containerize/](https://docs.docker.com/language/java/containerize/)
-        - [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
-        - [https://www.baeldung.com/dockerizing-spring-boot-application](https://www.baeldung.com/dockerizing-spring-boot-application)
+This repository contains several labs focused on building and securing Java microservices using Spring Boot, OAuth2, and JWT. Each lab demonstrates a key concept in modern backend development.
 
 ---
 
-### Considerations
-1. Utilize the provided resources and explore further to gain a deeper understanding of each topic.
-2. Look for open-source projects on Github that utilize Spring Boot, Spring Security, Spring Cloud, and Docker. Studying their code structure and implementation can be highly beneficial.
-3. Consider participating in online communities or forums dedicated to Spring Boot development. This allows you to ask questions, share learnings, and stay updated with the latest trends.
+## Lab 1: Ecommerce Microservice Architecture (`micro-ecommerce`)
 
-### Key Considerations:
-1. Actively participate in online communities or forums dedicated to Spring Boot
-development for valuable insights and troubleshooting assistance.
-2. Explore open-source projects on GitHub that utilize Spring Boot, Spring
-Security, Spring Cloud, and Docker. Studying their code structure and
-implementation can be highly beneficial in understanding real-world
-practices.
-3. Consider contributing to open-source projects to gain practical experience
-and collaborate with other developers. This can significantly enhance your
-learning journey.
-4. Stay updated with the latest trends and advancements in the Spring Boot
-ecosystem by following Spring's official channels, blogs, and community
-discussions.# java_ITL_lab3
+### Overview
+
+This lab demonstrates how to build an ecommerce application using a microservices architecture. The system is composed of several independent services, each responsible for a specific domain.
+
+![Ecommerce architecture](micro-ecommerce/diagram.png)
+
+### Components
+
+- **Gateway Service**: Routes client requests to the appropriate microservice. (Port: 8765)
+- **Service Discovery (Eureka)**: Handles service registration and discovery, enabling dynamic communication between services. (Port: 8761)
+- **Product Service**: Manages product-related operations (listing, details). (Port: 8082, Endpoint: `/api/v1/products`)
+- **Order Service**: Handles order-related operations (placing, viewing orders). (Port: 8081, Endpoint: `/api/v1/orders`)
+
+### Technologies Used
+
+- Spring Boot
+- Spring Cloud (Eureka)
+- Docker & Docker Compose
+
+### Running the Lab
+
+1. **Clone the repository** and navigate to the `micro-ecommerce` directory.
+2. **Start all services** using Docker Compose:
+   ```bash
+   docker compose up --build
+   ```
+3. **Access the services:**
+   - Gateway: [http://localhost:8765](http://localhost:8765)
+   - Service Discovery: [http://localhost:8761](http://localhost:8761)
+   - Product Service: [http://localhost:8082/api/v1/products](http://localhost:8082/api/v1/products)
+   - Order Service: [http://localhost:8081/api/v1/orders](http://localhost:8081/api/v1/orders)
+
+---
+
+## Lab 2: Integrate OAuth2 with a Social Login Provider (`social-auth`)
+
+### Scenario
+
+Enable users to register and log in to your e-commerce application using their existing social media accounts (e.g., Google, Facebook).
+
+### Tasks & Implementation
+
+- **Choose a social login provider** (Google used in this lab).
+- **Configure Spring Security** to integrate with the provider's OAuth2 flow.
+- **User Flow**: Users log in with their social credentials, granting access to your app.
+- **Retrieve user info** (name, email) from the provider after login.
+
+#### Steps
+
+1. **OAuth2 Client Setup**: Use Spring Security's OAuth2 client support to configure Google as the provider.
+2. **Credentials**: Add client ID and secret from Google Developers Console to your configuration.
+3. **Authentication**: Spring Security handles the OAuth2 flow, including redirects.
+4. **User Details**: After login, retrieve user info from the authentication object.
+
+#### Example
+
+- Login page: [http://localhost:8080/login](http://localhost:8080/login)
+- ![Login Screenshot](social-auth/docs/login.PNG)
+
+---
+
+## Lab 3: Secure a REST API with JWT Authentication (`social-jwt`)
+
+### Scenario
+
+Secure a REST API for a social media platform. Users must be authenticated with JWT before accessing protected endpoints.
+
+### Tasks & Implementation
+
+- **JWT Authentication**: Implement JWT-based login in Spring Boot.
+- **Login Flow**: Users log in with username/password and receive a JWT token.
+- **Securing Endpoints**: Require a valid JWT in the Authorization header for protected endpoints.
+- **Token Validation**: Implement logic to validate and decode JWTs in controllers.
+
+#### Example Payload
+
+```json
+{
+  "email": "dickson",
+  "password": "password"
+}
+```
+
+#### Example Response
+
+```json
+{
+  "token": "<JWT_TOKEN>",
+  "email": {
+    "password": null,
+    "username": "dickson",
+    "authorities": [{ "authority": "read" }],
+    "accountNonExpired": true,
+    "accountNonLocked": true,
+    "credentialsNonExpired": true,
+    "enabled": true
+  }
+}
+```
+
+---
+
+## Lab 4: Monitor Application Health with Actuator Endpoints (`social-jwt`)
+
+### Scenario
+
+Monitor the health and performance of your Spring Boot application in production.
+
+### Tasks & Implementation
+
+- **Enable Spring Boot Actuator** for health and metrics endpoints.
+- **Explore endpoints**: `/health`, `/metrics`, `/env`, etc.
+- **Visualize metrics**: Use tools like Grafana or Prometheus.
+- **Secure Actuator endpoints** with authentication.
+
+- Example Grafana dashboard config: [`extra/12900_rev3.json`](social-jwt/extra/12900_rev3.json)
+
+---
+
+## How to Use This Repository
+
+- Each lab is self-contained in its own directory.
+- Follow the instructions in each section above to run and experiment with the labs.
+- All services use standard Spring Boot conventions and can be run with Maven or Docker Compose as described.
